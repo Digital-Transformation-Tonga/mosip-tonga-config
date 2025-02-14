@@ -248,41 +248,6 @@
          </otherwise>
       </choice>
    </route>
-   <route id="demo-dedupe-->bio-dedupe update update route">
-      <from uri="eventbus://demo-dedupe-update-bus-out" />
-      <log message="demo-dedupe-->bio-dedupe update route ${bodyAs(String)}" />
-      <choice>
-         <when>
-            <jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == true)]</jsonpath>
-            <to uri="workflow-cmd://complete-as-failed" />
-            <to uri="workflow-cmd://anonymous-profile" />
-         </when>
-         <when>
-            <jsonpath>$.[?(@['isValid'] == true &amp;&amp; @['internalError'] == true)]</jsonpath>
-            <to uri="workflow-cmd://mark-as-reprocess" />
-         </when>
-         <when>
-            <jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == false)]</jsonpath>
-            <to uri="workflow-cmd://complete-as-rejected" />
-            <to uri="workflow-cmd://anonymous-profile" />
-         </when>
-         <when>
-            <jsonpath suppressExceptions="true">$.[?(@['messageBusAddress']['address'] == 'abis-handler-bus-in')]</jsonpath>
-            <to uri="eventbus://abis-handler-bus-in" />
-         </when>
-         <when>
-            <jsonpath suppressExceptions="true">$.[?(@['messageBusAddress']['address'] == 'manual-adjudication-bus-in')]</jsonpath>
-            <to uri="eventbus://manual-adjudication-bus-in" />
-         </when>
-		 <when>
-            <jsonpath suppressExceptions="true">$.[?(@['tags']['AGE_GROUP'] == 'INFANT')]</jsonpath>
-            <to uri="eventbus://verification-bus-in" />
-         </when>
-         <otherwise>
-            <to uri="eventbus://bio-dedupe-bus-in" />
-         </otherwise>
-      </choice>
-   </route>
    <route id="abis-handler-->abis-middleware update route">
       <from uri="eventbus://abis-handler-update-bus-out" />
       <log message="abis-handler-->abis-middleware update route ${bodyAs(String)}" />
@@ -319,9 +284,9 @@
          </otherwise>
       </choice>
    </route>
-   <route id="bio-dedupe-->uin-generation update route">
-      <from uri="eventbus://bio-dedupe-update-bus-out" />
-      <log message="bio-dedupe-->uin-generation update route ${bodyAs(String)}" />
+   <route id="demo-dedupe-->uin-generation update route">
+      <from uri="eventbus://demo-dedupe-update-bus-out" />
+      <log message="demo-dedupe-->uin-generation update route ${bodyAs(String)}" />
       <choice>
          <when>
             <jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == true)]</jsonpath>
@@ -419,34 +384,10 @@
          </otherwise>
       </choice>
    </route>
-	<!-- UIN Generator to biometric-extraction Route -->
-   <route id="uin-generation route-->biometric-extraction-stage update route">
+	<!-- UIN Generator to finalization Route -->
+   <route id="uin-generation route-->finalization-stage update route">
       <from uri="eventbus://uin-generator-update-bus-out" />
-      <log message="uin-generation-->biometric-extraction-stage route ${bodyAs(String)}" />
-      <choice>
-         <when>
-            <jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == true)]</jsonpath>
-            <to uri="workflow-cmd://complete-as-failed" />
-            <to uri="workflow-cmd://anonymous-profile" />
-         </when>
-         <when>
-            <jsonpath>$.[?(@['isValid'] == true &amp;&amp; @['internalError'] == true)]</jsonpath>
-            <to uri="workflow-cmd://mark-as-reprocess" />
-         </when>
-         <when>
-            <jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == false)]</jsonpath>
-            <to uri="workflow-cmd://complete-as-failed" />
-            <to uri="workflow-cmd://anonymous-profile" />
-         </when>
-         <otherwise>
-            <to uri="eventbus://biometric-extraction-bus-in" />
-         </otherwise>
-      </choice>
-   </route>
- <!-- biometric-extraction to finalization Route -->
-   <route id="biometric-extraction route-->finalization-stage update route">
-      <from uri="eventbus://biometric-extraction-update-bus-out" />
-      <log message="biometric-extraction-->finalization-stage route ${bodyAs(String)}" />
+      <log message="uin-generator-->finalization-stage route ${bodyAs(String)}" />
       <choice>
          <when>
             <jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == true)]</jsonpath>
