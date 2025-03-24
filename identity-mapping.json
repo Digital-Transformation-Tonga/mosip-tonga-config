@@ -163,6 +163,12 @@
 			"value": "proofOfException"
 		}
 	},
+	"deathDeclared": {
+			"value": "deathDeclared"
+		},
+		"dateOfDeath": {
+			"value": "dateOfDeath"
+		},
 	"attributeUpdateCountLimit": {
 		"fullName": 2,
 		"gender": 2,
