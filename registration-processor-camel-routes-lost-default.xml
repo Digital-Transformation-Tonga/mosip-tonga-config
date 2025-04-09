@@ -346,8 +346,7 @@
             <to uri="eventbus://bio-dedupe-bus-in" />
          </when>
 		 <otherwise>
-            <to uri="workflow-cmd://complete-as-failed" />
-            <to uri="workflow-cmd://anonymous-profile" />
+            <to uri="eventbus://printing-bus-in" />
          </otherwise>
       </choice>
    </route>
