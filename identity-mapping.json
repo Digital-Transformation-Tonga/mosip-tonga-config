@@ -15,6 +15,9 @@
 		"dob": {
 			"value": "dateOfBirth"
 		},
+		"brn": {
+			"value": "birthCertificateNumber"
+		},
 		"age": {
 			"value": "age"
 		},
