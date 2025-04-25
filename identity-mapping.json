@@ -6,7 +6,7 @@
 		"selectedHandles" : {
 			"value" : "selectedHandles"
 		},
-		"name": {
+		"fullName": {
 			"value": "fullName"
 		},
 		"gender": {
