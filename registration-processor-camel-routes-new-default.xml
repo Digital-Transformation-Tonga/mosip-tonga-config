@@ -198,15 +198,13 @@
             <to uri="eventbus://introducer-validator-bus-in" />
          </when>
          <otherwise>
-            <to uri="eventbus://demo-dedupe-bus-in" />
+            <to uri="eventbus://crvs-data-validator-bus-in" />
          </otherwise>
       </choice>
    </route>
-
-
-   <route id="introducer-validator-->demo-dedupe new route">
-      <from uri="eventbus://introducer-validator-new-bus-out" />
-      <log message="introducer-validator-->demo-dedupe new route ${bodyAs(String)}" />
+   <route id="introducer-validator-->open-crvs new route">
+      <from uri="eventbus://crvs-data-validator-bus-out" />
+      <log message="introducer-validator-->open-crvs new route ${bodyAs(String)}" />
       <choice>
          <when>
             <jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == true)]</jsonpath>
@@ -227,8 +225,6 @@
          </otherwise>
       </choice>
    </route>
-
-
    <route id="introducer-validator-->demo-dedupe new route">
       <from uri="eventbus://introducer-validator-new-bus-out" />
       <log message="introducer-validator-->demo-dedupe new route ${bodyAs(String)}" />
