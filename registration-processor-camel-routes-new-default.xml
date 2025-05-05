@@ -248,10 +248,30 @@
          </otherwise>
       </choice>
    </route>
-   <!-- Demo-dedupe to UIN Generator Route -->
+   <!-- CRVS DATA VALI DATER Route-->
    <route id="demo-dedupe-->uin-generation new route">
       <from uri="eventbus://demo-dedupe-new-bus-out" />
       <log message="demo-dedupe-->uin-generation new route ${bodyAs(String)}" />
+      <choice>
+         <when>
+            <jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == true)]</jsonpath>
+            <to uri="workflow-cmd://complete-as-failed" />
+            <to uri="workflow-cmd://anonymous-profile" />
+         </when>
+         <when>
+            <jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == false)]</jsonpath>
+            <to uri="workflow-cmd://complete-as-rejected" />
+            <to uri="workflow-cmd://anonymous-profile" />
+         </when>
+         <otherwise>
+            <to uri="eventbus://crvs-data-validator-bus-in" />
+         </otherwise>
+      </choice>
+   </route>
+   <!-- Demo-dedupe to UIN Generator Route -->
+   <route id="introducer-validator-->open-crvs new route">
+      <from uri="eventbus://crvs-data-validator-bus-out" />
+      <log message="introducer-validator-->open-crvs new route ${bodyAs(String)}" />
       <choice>
          <when>
             <jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == true)]</jsonpath>
