@@ -248,10 +248,10 @@
          </otherwise>
       </choice>
    </route>
-   <!-- CRVS data Validator Route-->
-   <route id="demo-dedupe-->uin-generation new route">
+   <!-- crvs-data validator  Route -->
+   <route id="demo-dedupe-->crvs-data validator  new route">
       <from uri="eventbus://demo-dedupe-new-bus-out" />
-      <log message="demo-dedupe-->uin-generation new route ${bodyAs(String)}" />
+      <log message="demo-dedupe-->crvs-data validator new route ${bodyAs(String)}" />
       <choice>
          <when>
             <jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == true)]</jsonpath>
@@ -269,9 +269,9 @@
       </choice>
    </route>
    <!-- Demo-dedupe to UIN Generator Route -->
-   <route id="introducer-validator-->open-crvs new route">
+   <route id="demo-dedupe-->uin-generation new route">
       <from uri="eventbus://crvs-data-validator-bus-out" />
-      <log message="introducer-validator-->open-crvs new route ${bodyAs(String)}" />
+      <log message="demo-dedupe-->uin-generation new route ${bodyAs(String)}" />
       <choice>
          <when>
             <jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == true)]</jsonpath>
