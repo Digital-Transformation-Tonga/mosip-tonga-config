@@ -248,7 +248,7 @@
          </otherwise>
       </choice>
    </route>
-   <!-- CRVS DATA VALI DATER Route-->
+   <!-- CRVS data Validator Route-->
    <route id="demo-dedupe-->uin-generation new route">
       <from uri="eventbus://demo-dedupe-new-bus-out" />
       <log message="demo-dedupe-->uin-generation new route ${bodyAs(String)}" />
