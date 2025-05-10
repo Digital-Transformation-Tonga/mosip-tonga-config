@@ -15,6 +15,9 @@
 		"dob": {
 			"value": "dateOfBirth"
 		},
+		"brn": {
+			"value": "birthCertificateNumber"
+		},
 		"age": {
 			"value": "age"
 		},
@@ -37,9 +40,6 @@
 			"value": "phone"
 		},
 		"email": {
-			"value": "email"
-		},
-		"emailId": {
 			"value": "email"
 		},
 		"uin": {
@@ -114,7 +114,6 @@
 		"address": {
 			"value": "addressLine1,addressLine2,addressLine3,city,region,province,postalCode"
 		},
-
 		"individual_id": {
 			"value": "individual_id"
 		},
@@ -138,6 +137,15 @@
 		},
 		"password": {
 			"value": "password"
+		},
+		"deceasedDeclarationDate" : {
+			"value": "deceasedDeclarationDate"
+		},
+		"declaredAsDeceased" : {
+			"value" : "declaredAsDeceased"
+		},
+		"typeOfDeath" : {
+			"value" : "typeOfDeath"
 		}
 	},
 	"metaInfo": {
@@ -163,12 +171,15 @@
 			"value": "proofOfException"
 		}
 	},
+	"deathDeclared": {
+			"value": "deathDeclared"
+		},
+		"dateOfDeath": {
+			"value": "dateOfDeath"
+		},
 	"attributeUpdateCountLimit": {
-		"fullName": 2,
+		"fullName": 5,
 		"gender": 2,
-		"dateOfBirth": 2
-
-		
-		
+		"dateOfBirth": 3
 	}
 }
