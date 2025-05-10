@@ -84,10 +84,41 @@
             <to uri="workflow-cmd://anonymous-profile" />
          </when>
          <otherwise>
+<!--            <to uri="eventbus://packet-classifier-bus-in" />-->
+            <to uri="eventbus://crvs-data-validator-bus-in" />
+         </otherwise>
+      </choice>
+   </route>
+
+
+   <route id="packet-classifier-->crvs-data-validator new route">
+      <from uri="eventbus://crvs-data-validator-new-bus-out" />
+      <log message="packet-classifier-->crvs-data-validator new route ${bodyAs(String)}" />
+      <choice>
+         <when>
+            <jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == true)]</jsonpath>
+            <to uri="workflow-cmd://complete-as-failed" />
+            <to uri="workflow-cmd://anonymous-profile" />
+         </when>
+         <when>
+            <jsonpath>$.[?(@['isValid'] == true &amp;&amp; @['internalError'] == true)]</jsonpath>
+            <to uri="workflow-cmd://mark-as-reprocess" />
+         </when>
+         <when>
+            <jsonpath>$.[?(@['isValid'] == false &amp;&amp; @['internalError'] == false)]</jsonpath>
+            <to uri="workflow-cmd://complete-as-failed" />
+            <to uri="workflow-cmd://anonymous-profile" />
+         </when>
+         <otherwise>
+<!--            <to uri="eventbus://c-m-d-validator-bus-in" />-->
             <to uri="eventbus://packet-classifier-bus-in" />
          </otherwise>
       </choice>
    </route>
+
+
+
+
    <!-- Packet Classifier to CMD Validator Route -->
    <route id="packet-classifier-->cmd-validator new route">
       <from uri="eventbus://packet-classifier-new-bus-out" />
@@ -315,6 +346,7 @@
          </when>
          <otherwise>
             <to uri="workflow-cmd://complete-as-processed" />
+            <to uri="workflow-cmd://anonymous-profile" />
          </otherwise>
       </choice>
    </route>

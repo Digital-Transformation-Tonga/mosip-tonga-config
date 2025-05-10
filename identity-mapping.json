@@ -42,9 +42,6 @@
 		"email": {
 			"value": "email"
 		},
-		"emailId": {
-			"value": "email"
-		},
 		"uin": {
 			"value": "UIN"
 		},

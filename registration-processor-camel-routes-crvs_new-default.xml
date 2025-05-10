@@ -375,7 +375,7 @@
          </otherwise>
       </choice>
    </route>
-   <route id="printing-stage--> new route">
+   <route id="printing-stage--> crvs_new route">
       <from uri="eventbus://printing-crvs_new-bus-out" />
       <log message="printing-stage--> route ${bodyAs(String)}" />
       <choice>
