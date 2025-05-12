@@ -3,6 +3,9 @@
         "name": [
             "fullName"
         ],
+        "brn": [
+            "birthCertificateNumber"
+        ],
         "dob": [
             "dateOfBirth"
         ],
