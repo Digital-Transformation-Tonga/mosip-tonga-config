@@ -81,6 +81,12 @@
 		"addressLine3": {
 			"value": "addressLine3"
 		},
+		"district": {
+			"value": "district"
+		},
+		"village": {
+			"value": "village"
+		},
 		"location1": {
 			"value": "city"
 		},
