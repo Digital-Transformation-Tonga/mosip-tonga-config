@@ -84,6 +84,12 @@
 		"location1": {
 			"value": "city"
 		},
+		"district": {
+			"value": "district"
+		},
+		"village": {
+			"value": "village"
+		},
 		"location2": {
 			"value": "region"
 		},
