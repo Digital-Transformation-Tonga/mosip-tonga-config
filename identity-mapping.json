@@ -39,6 +39,9 @@
 		"phoneNumber": {
 			"value": "phone"
 		},
+		"emailId": {
+			"value": "email"
+		},
 		"email": {
 			"value": "email"
 		},
