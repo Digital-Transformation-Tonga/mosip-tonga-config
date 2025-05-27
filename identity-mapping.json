@@ -18,6 +18,15 @@
 		"brn": {
 			"value": "birthCertificateNumber"
 		},
+		"passportNumber": {
+			"value": "passportNumber"
+		},
+		"drivingLicenseNumber": {
+			"value": "drivingLicenseNumber"
+		},
+		"nationalIdNumber": {
+			"value": "nationalIdNumber"
+		},
 		"age": {
 			"value": "age"
 		},
