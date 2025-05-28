@@ -84,7 +84,7 @@
             <to uri="workflow-cmd://anonymous-profile" />
          </when>
          <otherwise>
-         <to uri="eventbus://packet-classifier-bus-in" />
+<           <to uri="eventbus://packet-classifier-bus-in" />
            <!--   <to uri="eventbus://crvs-data-validator-bus-in" /> -->
          </otherwise>
       </choice>
