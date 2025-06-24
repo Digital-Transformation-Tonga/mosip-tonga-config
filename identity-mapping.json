@@ -6,17 +6,35 @@
 		"selectedHandles" : {
 			"value" : "selectedHandles"
 		},
+		"deathDeclared": {
+			"value": "deathDeclared"
+		},
+		"handleIdValue": {
+			"value": "handleIdValue"
+		},
+		"handleIdType": {
+			"value": "handleIdType"
+		},
 		"name": {
 			"value": "fullName"
 		},
 		"gender": {
-			"value": "gender"
+			"value": "sex"
+		},
+		"sex": {
+			"value": "sex"
 		},
 		"dob": {
 			"value": "dateOfBirth"
 		},
 		"brn": {
 			"value": "birthCertificateNumber"
+		},
+		"birthRegistrationCertificate": {
+			"value": "birthCertificateNumber"
+		},
+		"passportId": {
+			"value": "passportId"
 		},
 		"passportNumber": {
 			"value": "passportNumber"
@@ -27,8 +45,14 @@
 		"nationalIdNumber": {
 			"value": "nationalIdNumber"
 		},
+		"nationalId": {
+			"value": "nationalId"
+		},
 		"age": {
 			"value": "age"
+		},
+		"drivingLicenseId": {
+			"value": "drivingLicenseId"
 		},
 		"introducerRID": {
 			"value": "introducerRID"
@@ -40,7 +64,13 @@
 			"value": "introducerVID"
 		},
 		"introducerName": {
-			"value": "introducerName"
+			"value": "guardianOrParentName"
+		},
+		"guardianOrParentName": {
+			"value": "guardianOrParentName"
+		},
+		"guardianOrParentBirthCertificateNumber": {
+			"value": "guardianOrParentBirthCertificateNumber"
 		},
 		"phone": {
 			"value": "phone"
@@ -81,6 +111,9 @@
 		"preferredLanguage": {
 			"value": "preferredLang"
 		},
+		"preferredLang": {
+			"value": "preferredLang"
+		},
 		"locationHierarchyForProfiling": {
 			"value": "zone,postalCode"
 		},
@@ -115,7 +148,7 @@
 			"value": "zone"
 		},
 		"fullAddress": {
-			"value": "addressLine1,addressLine2,addressLine3,city,region,province,postalCode"
+			"value": "addressLine1,addressLine2,addressLine3,district,village"
 		},
 		"bestTwoFingers": {
 			"value": "bestTwoFingers"
@@ -130,7 +163,7 @@
 			"value": "phone"
 		},
 		"address": {
-			"value": "addressLine1,addressLine2,addressLine3,city,region,province,postalCode"
+			"value": "addressLine1,addressLine2,addressLine3,district,village"
 		},
 		"individual_id": {
 			"value": "individual_id"
