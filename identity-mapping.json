@@ -21,9 +21,6 @@
 		"gender": {
 			"value": "gender"
 		},
-		"sex": {
-			"value": "sex"
-		},
 		"dob": {
 			"value": "dateOfBirth"
 		},
