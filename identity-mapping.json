@@ -19,7 +19,7 @@
 			"value": "fullName"
 		},
 		"gender": {
-			"value": "sex"
+			"value": "gender"
 		},
 		"sex": {
 			"value": "sex"
